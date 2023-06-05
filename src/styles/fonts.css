@@ -1,0 +1,28 @@
+@font-face {
+	font-family: 'Apple Garamond';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(/fonts/AppleGaramond-Light.ttf);
+}
+@font-face {
+	font-family: 'Apple Garamond';
+	font-style: italic;
+	font-weight: 400;
+	font-display: swap;
+	src: url(/fonts/AppleGaramond-LightItalic.ttf);
+}
+@font-face {
+	font-family: 'Apple Garamond';
+	font-style: normal;
+	font-weight: 700;
+	font-display: swap;
+	src: url(/fonts/AppleGaramond.ttf);
+}
+@font-face {
+	font-family: 'Apple Garamond';
+	font-style: italic;
+	font-weight: 700;
+	font-display: swap;
+	src: url(/fonts/AppleGaramond-Italic.ttf);
+}
