@@ -10,6 +10,7 @@ export default {
 				sand: '#fdf6e3',
 				wave: '#2664f6',
 				hot: '#ff00a8',
+				leaf: '#7bc64b',
 			},
 			screens: {
 				'<sm': { max: '640px' },

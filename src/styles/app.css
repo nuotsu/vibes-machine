@@ -3,3 +3,34 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	::selection {
+		@apply bg-leaf;
+	}
+
+	body {
+		position: relative;
+		@apply font-serif bg-sand;
+	}
+
+	img {
+		width: auto;
+		height: auto;
+	}
+}
+
+@layer utilities {
+	.bg-mahogany {
+		background-image: url(/assets/mahogany.webp);
+		background-size: 250px 250px;
+	}
+
+	.shadow-real {
+		box-shadow: 0 1px 1px rgba(0,0,0,0.12),
+			0 2px 2px rgba(0,0,0,0.12),
+			0 4px 4px rgba(0,0,0,0.12),
+			0 8px 8px rgba(0,0,0,0.12),
+			0 16px 16px rgba(0,0,0,0.12);
+	}
+}
