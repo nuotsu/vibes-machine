@@ -39,6 +39,6 @@
 		transition: rotate 0.3s ease-in-out;
 	}
 	record-player:not(:hover) .arm {
-		rotate: 5deg;
+		rotate: 12deg;
 	}
 </style>
