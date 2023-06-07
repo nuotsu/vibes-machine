@@ -11,7 +11,8 @@
 
 	body {
 		position: relative;
-		min-height: 100vh;
+		height: 100vh;
+		overflow: hidden;
 		@apply font-serif bg-sand;
 	}
 
