@@ -6,6 +6,7 @@ export default {
 			fontFamily: {
 				serif: `'Apple Garamond', serif`,
 				dos: `'Perfect DOS', serif`,
+				handwritten: `'Nothing You Could Do', cursive`,
 			},
 			colors: {
 				sand: '#fdf6e3',

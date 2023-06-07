@@ -9,17 +9,10 @@
 	>
 		<polyline points={points} fill="none" stroke="currentColor" />
 	</svg>
-
-	<div slot="controls">
-		<Fader label="FFT" max={fftSizes.length - 1} bind:value={fftSizeIndex} output={fftSize} />
-		<Fader label="Height" max={1000} bind:value={height} />
-		<Fader label="Factor" min={0.05} max={10} bind:value={factor} step={0.05} />
-	</div>
 </AudioAnalyzer>
 
 <script lang="ts">
 	import AudioAnalyzer from './AudioAnalyzer.svelte'
-	import Fader from './Fader.svelte'
 	import { fftSizes } from '$types/AudioAnalysis'
 	import { onMount } from 'svelte'
 	import { writable } from 'svelte/store'
@@ -27,11 +20,10 @@
 	export let
 		analyzer: AudioAnalysis.Analyzer = writable(null),
 		svgClassName: string | null = null,
-		fftSizeIndex = 2,
 		height = 30,
 		factor = 1.5
 
-	$: fftSize = fftSizes[fftSizeIndex]
+	$: fftSize = fftSizes[2]
 
 	let data: number[] = []
 
