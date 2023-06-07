@@ -1,12 +1,12 @@
-<figure class="w-[200px] bg-white p-3 rounded-sm shadow-real">
+<figure class="w-[200px] bg-white p-3 pb-0 rounded-sm shadow-real">
 	<button
-		class="w-full aspect-[1.8/2] bg-black rounded-sm overflow-hidden glare"
+		class="block w-full aspect-[1.8/2] bg-black/5 rounded-sm overflow-hidden shadow-inner glare"
 		on:click={() => on = !on}
 	>
 		{#if on && typeof navigator !== 'undefined' && ('mediaDevices' in navigator)}
-			{#await navigator.mediaDevices.getUserMedia({ video: true }) then stream}
+			{#await navigator.mediaDevices.getUserMedia({ video: { frameRate: 5 }}) then stream}
 				<video
-					class="-scale-x-100 aspect-[inherit] object-cover"
+					class="block w-full aspect-[inherit] object-cover -scale-x-100 anim-colorize"
 					autoplay muted crossorigin="anonymous"
 					use:setStream={stream}
 				/>
@@ -14,14 +14,34 @@
 		{/if}
 	</button>
 
-	<figcaption
-		class="cursor-text mt-2 font-handwritten text-center leading-none outline-none"
-		contenteditable spellcheck={false}
-	/>
+	<textarea
+		class="cursor-text mt-2 font-handwritten text-center leading-tight outline-none"
+		rows={2} maxlength={50} spellcheck={false}
+	></textarea>
 </figure>
 
+<style>
+	.anim-colorize {
+		animation: colorize 15s ease-out forwards;
+	}
+
+	@keyframes colorize {
+		from {
+			opacity: 0;
+			filter: grayscale(1);
+		}
+		to {
+			opacity: 1;
+			filter: grayscale(.35) sepia(.1) hue-rotate(-10deg);
+		}
+	}
+
+	textarea {
+		resize: none;
+	}
+</style>
+
 <script lang="ts">
-	let analyzer: AudioAnalysis.Analyzer
 	let on: boolean = false
 
 	function setStream(node: HTMLVideoElement, stream: MediaStream | null) {

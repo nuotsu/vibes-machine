@@ -38,7 +38,7 @@
 		top = Math.random() * 100,
 		moving = false,
 		minimum = 0,
-		rotate = Math.random() * 5 - 2.5
+		rotate = Math.random() * 8 - 4
 
 	function mousemove(e: MouseEvent) {
 		if (!moving) return
@@ -62,7 +62,7 @@
 
 	function drop() {
 		if (minimum > 0) {
-			rotate = Math.random() * 5 - 2.5
+			rotate = Math.random() * 8 - 4
 		}
 
 		moving = false
