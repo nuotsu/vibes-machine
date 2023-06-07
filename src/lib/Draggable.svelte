@@ -9,6 +9,7 @@
 	class:moving={moving && minimum > 0}
 	style:left="{left}%"
 	style:top="{top}%"
+	style:rotate="{rotate}deg"
 	on:mousedown={() => moving = true}
 	bind:this={root}
 >
@@ -16,8 +17,13 @@
 </draggable-element>
 
 <style>
+	draggable-element {
+		transition: rotate 0.1s;
+	}
+
 	.moving {
 		cursor: grabbing;
+		rotate: 0deg !important;
 	}
 
 	draggable-element.moving:active :global(button) {
@@ -27,12 +33,12 @@
 
 <script lang="ts">
 	let
+		root: HTMLElement,
 		left = Math.random() * 100,
 		top = Math.random() * 100,
 		moving = false,
-		root: HTMLElement
-
-	let minimum = 0
+		minimum = 0,
+		rotate = Math.random() * 5 - 2.5
 
 	function mousemove(e: MouseEvent) {
 		if (!moving) return
@@ -46,12 +52,19 @@
 
 	function mouseup(e: MouseEvent) {
 		if ((e.target as HTMLElement).closest('draggable-element') !== root) return
-		moving = false
-		minimum = 0
+		drop()
 	}
 
 	function keyup(e: KeyboardEvent) {
 		if (e.key !== 'Escape') return
+		drop()
+	}
+
+	function drop() {
+		if (minimum > 0) {
+			rotate = Math.random() * 5 - 2.5
+		}
+
 		moving = false
 		minimum = 0
 	}

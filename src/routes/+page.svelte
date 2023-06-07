@@ -1,6 +1,6 @@
-<!-- <Draggable>
+<Draggable>
 	<RecordPlayer/>
-</Draggable> -->
+</Draggable>
 
 <Draggable>
 	<Polaroid/>
