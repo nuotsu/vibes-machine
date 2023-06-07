@@ -3,6 +3,7 @@
 		class="cursor-grab m-auto bg-leaf rounded-full shadow-real"
 		class:spin={Math.abs(spin) <= 2}
 		style:rotate="{-spin}deg"
+		style:animation-play-state={on ? 'running' : 'paused'}
 		on:wheel={cue}
 	>
 		<img
@@ -21,10 +22,19 @@
 		draggable="false"
 	/>
 
-	<div class="grid grid-cols-2 p-1 gap-1 mt-2 bg-black rounded">
-		<Frequency svgClassName="w-full text-white rounded-sm" />
-		<TimeDomain svgClassName="w-full text-white rounded-sm" />
-	</div>
+	<button
+		class="group grid grid-cols-2 items-center gap-1 p-1 mt-2 bg-black text-white/80 rounded h-[38px] overflow-hidden glare"
+		on:click={() => on = !on}
+	>
+		{#if on}
+			<Frequency svgClassName="w-full rounded-sm" />
+			<TimeDomain svgClassName="w-full rounded-sm" />
+		{:else}
+			<small class="col-span-full font-dos opacity-40 group-hover:opacity-70 transition-opacity">
+				Tap to start
+			</small>
+		{/if}
+	</button>
 </record-player>
 
 <style>
@@ -38,7 +48,7 @@
 
 	vinyl-record:active {
 		cursor: grabbing;
-		animation-play-state: paused;
+		animation-play-state: paused !important;
 	}
 
 	@keyframes spin {
@@ -59,6 +69,7 @@
 	import Frequency from './audio/Frequency.svelte'
 	import TimeDomain from './audio/TimeDomain.svelte'
 
+	let on: boolean = false
 	let spin: number = 0
 
 	function cue(e: WheelEvent) {

@@ -5,6 +5,7 @@ export default {
 		extend: {
 			fontFamily: {
 				serif: `'Apple Garamond', serif`,
+				dos: `'Perfect DOS', serif`,
 			},
 			colors: {
 				sand: '#fdf6e3',

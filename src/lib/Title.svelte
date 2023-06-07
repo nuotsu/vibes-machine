@@ -1,4 +1,4 @@
-<header class="fixed text-center text-wave">
+<header class="pointer-events-none fixed text-center text-wave">
 	<time class="text-5xl" datetime={time}>{time}</time>
 	<h1 class="text-xl">Vibes Machine</h1>
 </header>
