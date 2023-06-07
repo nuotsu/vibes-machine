@@ -22,7 +22,8 @@
 	/>
 
 	<div class="grid grid-cols-2 p-1 gap-1 mt-2 bg-black rounded">
-		<Frequency svgClassName="w-full text-white" />
+		<Frequency svgClassName="w-full text-white rounded-sm" />
+		<TimeDomain svgClassName="w-full text-white rounded-sm" />
 	</div>
 </record-player>
 
@@ -41,9 +42,7 @@
 	}
 
 	@keyframes spin {
-		to {
-			rotate: 1turn;
-		}
+		to { rotate: 1turn; }
 	}
 
 	.arm {
@@ -58,6 +57,7 @@
 
 <script lang="ts">
 	import Frequency from './audio/Frequency.svelte'
+	import TimeDomain from './audio/TimeDomain.svelte'
 
 	let spin: number = 0
 
