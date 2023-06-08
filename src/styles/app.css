@@ -9,11 +9,14 @@
 		@apply bg-leaf;
 	}
 
+	html {
+		overflow: hidden;
+	}
+
 	body {
 		user-select: none;
 		position: relative;
 		height: 100vh;
-		overflow: hidden;
 		@apply font-serif bg-sand caret-wave;
 	}
 
