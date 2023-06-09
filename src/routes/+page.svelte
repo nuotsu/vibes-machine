@@ -10,7 +10,6 @@
 	<JewelCase/>
 </Draggable>
 
-<Shadows/>
 <Title/>
 
 <script lang="ts">
@@ -18,6 +17,5 @@
 	import RecordPlayer from '$lib/RecordPlayer.svelte'
 	import Polaroid from '$lib/Polaroid.svelte'
 	import JewelCase from '$lib/JewelCase.svelte'
-	import Shadows from '$lib/Shadows.svelte'
 	import Title from '$lib/Title.svelte'
 </script>

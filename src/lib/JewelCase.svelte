@@ -5,17 +5,23 @@
 		draggable={false}
 	/>
 
-	{#if on}
-		<figure class="absolute inset-0 overflow-hidden">
+	<figure class="absolute inset-0 overflow-hidden">
+		<img
+			class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[50%] -ml-1 mix-blend-darken"
+			src="/assets/qrcode-upload.svg"
+			alt="QR code"
+		/>
+
+		{#if on}
 			<img
 				transition:fly={{ x: -185, opacity: 1 }}
-				class="w-full h-full object-cover"
+				class="relative w-full h-full object-cover"
 				src="/assets/album-cover.webp"
 				alt=""
 				draggable={false}
 			/>
-		</figure>
-	{/if}
+		{/if}
+	</figure>
 </button>
 
 <style>
