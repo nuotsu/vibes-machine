@@ -29,4 +29,4 @@ export default defineConfig({
 	}
 })
 
-const singletonTypes = ['jewelCase']
+const singletonTypes = ['database']

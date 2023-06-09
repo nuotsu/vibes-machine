@@ -1,20 +1,20 @@
 import { defineField, defineType } from 'sanity'
 
 export default defineType({
-	name: 'jewelCase',
-	title: 'Jewel Case',
+	name: 'database',
+	title: 'Database',
 	type: 'document',
 	liveEdit: true,
 	fields: [
 		defineField({
-			name: 'uploads',
+			name: 'jewelCase',
 			type: 'array',
 			of: [{ type: 'image' }]
 		}),
 	],
 	preview: {
 		prepare: () => ({
-			title: 'Jewel Case',
+			title: 'Database',
 		})
 	}
 })

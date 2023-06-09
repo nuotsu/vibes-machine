@@ -4,7 +4,7 @@ import { singleton } from './builders'
 const structure: StructureResolver = (S, context) => S.list()
 	.title('Content')
 	.items([
-		singleton(S, 'Jewel Case', 'jewelCase').icon(() => '💽'),
+		singleton(S, 'Database', 'database').icon(() => '💾'),
 	])
 
 export default structure

@@ -1,7 +1,7 @@
 // documents
-import jewelCase from './documents/jewelCase'
+import database from './documents/database'
 
 export const schemaTypes = [
 	// documents
-	jewelCase
+	database
 ]

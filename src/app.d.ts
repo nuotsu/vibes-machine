@@ -1,4 +1,7 @@
+import type { SanityImageAssetDocument } from '@sanity/client'
+
 // See https://kit.svelte.dev/docs/types#app
+
 // for information about these interfaces
 declare global {
 	namespace App {
@@ -7,6 +10,14 @@ declare global {
 		// interface PageData {}
 		// interface Platform {}
 	}
+
+	namespace Sanity {
+		interface DB {
+			jewelCase: Image[]
+		}
+
+		type Image = SanityImageAssetDocument
+	}
 }
 
-export {};
+export {}

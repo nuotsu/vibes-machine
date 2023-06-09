@@ -8,9 +8,15 @@ dependencies:
   '@sanity/client':
     specifier: ^6.1.2
     version: 6.1.2
+  '@sanity/image-url':
+    specifier: ^1.0.2
+    version: 1.0.2
   autoprefixer:
     specifier: ^10.4.14
     version: 10.4.14(postcss@8.4.24)
+  groq:
+    specifier: ^3.12.0
+    version: 3.12.0
   postcss:
     specifier: ^8.4.24
     version: 8.4.24
@@ -316,6 +322,11 @@ packages:
       '@types/eventsource': 1.1.11
       event-source-polyfill: 1.0.31
       eventsource: 2.0.2
+    dev: false
+
+  /@sanity/image-url@1.0.2:
+    resolution: {integrity: sha512-C4+jb2ny3ZbMgEkLd7Z3C75DsxcTEoE+axXQJsQ75ou0AKWGdVsP351hqK6mJUUxn5HCSlu3vznoh7Yljye4cQ==}
+    engines: {node: '>=10.0.0'}
     dev: false
 
   /@sveltejs/adapter-auto@2.1.0(@sveltejs/kit@1.20.1):
@@ -748,6 +759,11 @@ packages:
   /graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
     dev: true
+
+  /groq@3.12.0:
+    resolution: {integrity: sha512-AyPKzCVFeNcSB/pyEW/tuvAbnWB+FKXW70nzMOliTsYjgNoxUQ0L9xPmqv8Q7QmTXuRgATgfRsy2mO4WOxHRXg==}
+    engines: {node: '>=14'}
+    dev: false
 
   /has@1.0.3:
     resolution: {integrity: sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==}
