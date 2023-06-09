@@ -4,21 +4,12 @@ export default defineType({
 	name: 'jewelCase',
 	title: 'Jewel Case',
 	type: 'document',
+	liveEdit: true,
 	fields: [
 		defineField({
 			name: 'uploads',
 			type: 'array',
-			of: [
-				{
-					type: 'image',
-					fields: [
-						defineField({
-							name: 'uploadDate',
-							type: 'string',
-						})
-					]
-				}
-			]
+			of: [{ type: 'image' }]
 		}),
 	],
 	preview: {
