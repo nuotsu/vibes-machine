@@ -6,12 +6,15 @@
 	/>
 
 	{#if on}
-		<img
-			class="album-cover absolute inset-0 w-full h-full object-cover"
-			src="/assets/album-cover.webp"
-			alt=""
-			draggable={false}
-		/>
+		<figure class="absolute inset-0 overflow-hidden">
+			<img
+				transition:fly={{ x: -185, opacity: 1 }}
+				class="w-full h-full object-cover"
+				src="/assets/album-cover.webp"
+				alt=""
+				draggable={false}
+			/>
+		</figure>
 	{/if}
 </button>
 
@@ -20,12 +23,15 @@
 		width: 200px;
 	}
 
-	.album-cover {
-		padding: 2.5px 2.5px 1.5px 22px;
+	figure {
+		padding: 2.5px 2.5px 1.5px 0;
+		left: 22px;
 		mix-blend-mode: hard-light;
 	}
 </style>
 
 <script lang="ts">
+	import { fly } from 'svelte/transition'
+
 	let on = true
 </script>
