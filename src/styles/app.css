@@ -24,6 +24,34 @@
 		width: auto;
 		height: auto;
 	}
+
+	hr {
+		@apply my-2 border-neutral-400;
+	}
+}
+
+@layer components {
+	._btn {
+		display: inline-block;
+		padding: 0 .5em;
+	}
+
+	.windows {
+		@apply bg-neutral-200 border-2 border-t-white border-l-white border-b-neutral-400 border-r-neutral-400;
+	}
+	.windows-invert {
+		@apply border-2 border-t-neutral-400 border-l-neutral-400 border-b-white border-r-white;
+	}
+
+	.button {
+		@apply _btn windows;
+	}
+	.button:not([disabled]):active {
+		@apply windows-invert;
+	}
+	.button[disabled] {
+		@apply windows-invert bg-neutral-300 line-through decoration-1;
+	}
 }
 
 @layer utilities {

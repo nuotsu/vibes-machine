@@ -1,33 +1,13 @@
-<form on:submit|preventDefault={onsubmit}>
-	<input name="image" type="file" accept="image/png,image/jpg" required>
-	<button>Upload</button>
-</form>
+<main class="p-1 grid place-content-center min-h-screen bg-[#008080]">
+	<section class="grid gap-2 p-1 windows shadow-real">
+		<h2 class="px-2 bg-gradient-to-r from-wave to-hot text-white">
+			Upload album cover
+		</h2>
 
-<script lang="ts">
-	import { clientWithToken } from '$utils/sanity'
+		<Upload/>
+	</section>
+</main>
 
-	function onsubmit(e: Event) {
-		const form = e.target as HTMLFormElement
-		const formData = new FormData(form)
-		const image = formData.get('image') as File
-
-		clientWithToken.assets
-			.upload('image', image, { filename: image.name, contentType: image.type })
-			.then(document => {
-				console.log(document)
-
-				client
-					.patch('database')
-					.setIfMissing({ jewelCase: [] })
-					.insert('after', 'jewelCase[-1]', [{
-						_type: 'image',
-						asset: { _type: 'reference', _ref: document._id }
-					}])
-					.commit({ autoGenerateArrayKeys: true })
-					.then(() => {
-						form.reset()
-					})
-			})
-			.catch(error => console.error('error', error))
-	}
+<script>
+	import Upload from './Upload.svelte'
 </script>

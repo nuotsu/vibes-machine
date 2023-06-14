@@ -15,9 +15,9 @@
 	</button>
 
 	<textarea
-		class="cursor-text mt-2 font-handwritten text-center leading-tight outline-none"
+		class="cursor-text mt-2 font-handwritten text-center leading-tight outline-none -rotate-3"
 		rows={2} maxlength={50} spellcheck={false}
-	></textarea>
+	>good vibes only</textarea>
 </figure>
 
 <style>

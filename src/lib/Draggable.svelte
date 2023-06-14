@@ -18,6 +18,7 @@
 
 <style>
 	draggable-element {
+		translate: -50% -50%;
 		transition: rotate 0.1s;
 	}
 
@@ -34,8 +35,8 @@
 <script lang="ts">
 	let
 		root: HTMLElement,
-		left = Math.random() * 100,
-		top = Math.random() * 100,
+		left = Math.random() * 80 + 10,
+		top = Math.random() * 80 + 10,
 		moving = false,
 		minimum = 0,
 		rotate = Math.random() * 8 - 4
