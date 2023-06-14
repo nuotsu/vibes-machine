@@ -1,4 +1,7 @@
-<button class="relative block glare shadow-real" on:click={() => on = !on}>
+<button
+	class="relative block glare shadow-real"
+	on:click={enabled ? () => on = !on : undefined}
+>
 	<img
 		src="/assets/jewel-case.webp"
 		alt=""
@@ -12,7 +15,7 @@
 			alt="QR code"
 		/>
 
-		{#if on}
+		{#if enabled && on}
 			{#await getAlbumCover(true) then src}
 				<img
 					transition:fly={{ x: -185, opacity: 1, duration }}
@@ -42,13 +45,17 @@
 	import { client } from '$utils/sanity'
 	import groq from 'groq'
 
+	export let index: number | undefined = undefined
+
+	const enabled = index !== undefined
+
 	let on = true, current: string | undefined = undefined
 	const duration = 500
 
 	async function getAlbumCover(store = false) {
 		const src = await client.fetch<string>(groq`
-			*[_type == 'database'][0].jewelCase[0].asset->url
-		`)
+			*[_type == 'database'][0].jewelCase[$index].asset->url
+		`, { index })
 
 		if (store) current = src
 

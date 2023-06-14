@@ -7,7 +7,17 @@
 </Draggable>
 
 <Draggable>
-	<JewelCase/>
+	<JewelCase />
+</Draggable>
+<Draggable>
+	<JewelCase index={1} />
+</Draggable>
+<Draggable>
+	<JewelCase index={0} />
+</Draggable>
+
+<Draggable>
+	<MixTape/>
 </Draggable>
 
 <Title/>
@@ -18,6 +28,7 @@
 	import RecordPlayer from '$lib/RecordPlayer.svelte'
 	import Polaroid from '$lib/Polaroid.svelte'
 	import JewelCase from '$lib/JewelCase.svelte'
+	import MixTape from '$lib/MixTape.svelte'
 	import Title from '$lib/Title.svelte'
 	import Shadows from '$lib/Shadows.svelte'
 </script>
