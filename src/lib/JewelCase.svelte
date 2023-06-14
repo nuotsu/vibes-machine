@@ -66,7 +66,7 @@
 
 			setTimeout(() => {
 				on = true
-			}, duration)
+			}, duration * 2)
 		}
 	}, 1000 * 5)
 </script>
