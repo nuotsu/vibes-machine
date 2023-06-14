@@ -50,7 +50,7 @@
 		@apply windows-invert;
 	}
 	.button[disabled] {
-		@apply windows-invert bg-neutral-300 line-through decoration-1;
+		@apply windows-invert bg-neutral-300;
 	}
 }
 

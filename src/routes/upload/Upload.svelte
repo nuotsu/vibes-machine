@@ -5,6 +5,7 @@
 			name="image"
 			type="file" accept="image/png,image/jpg"
 			required hidden
+			disabled={status === 'complete'}
 			on:change={onchange}
 		/>
 
@@ -12,7 +13,7 @@
 			<p>Click to upload</p>
 
 			{#if src}
-				<img class="aspect-square w-full" {src} alt="" />
+				<img class="aspect-square w-full object-cover" {src} alt="" />
 			{/if}
 		</div>
 	</label>

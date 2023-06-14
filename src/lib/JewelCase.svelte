@@ -13,9 +13,9 @@
 		/>
 
 		{#if on}
-			{#await getAlbumCover() then src}
+			{#await getAlbumCover(true) then src}
 				<img
-					transition:fly={{ x: -185, opacity: 1 }}
+					transition:fly={{ x: -185, opacity: 1, duration }}
 					class="relative w-full h-full object-cover"
 					{src}
 					alt=""
@@ -42,11 +42,31 @@
 	import { client } from '$utils/sanity'
 	import groq from 'groq'
 
-	let on = true
+	let on = true, current: string | undefined = undefined
+	const duration = 500
 
-	async function getAlbumCover() {
-		return await client.fetch<string>(groq`
+	async function getAlbumCover(store = false) {
+		const src = await client.fetch<string>(groq`
 			*[_type == 'database'][0].jewelCase[0].asset->url
 		`)
+
+		if (store) current = src
+
+		return src
 	}
+
+	setInterval(async () => {
+		if (!on) return
+
+		const src = await getAlbumCover()
+
+		if (src !== current) {
+			current = src
+			on = false
+
+			setTimeout(() => {
+				on = true
+			}, duration)
+		}
+	}, 1000 * 5)
 </script>
